@@ -1,11 +1,9 @@
-# --- Veritabanı Bağlantısı ---
-import psycopg2
+# db.py
+from supabase import create_client
 
-def get_connection():
-    return psycopg2.connect(
-        host="dpg-d1s52hh5pdvs73aenf3g-a.oregon-postgres.render.com",
-        database="yeniatama",
-        user="yeniatama_user",
-        password="l7t6EuA6OD5YuTDhiKLdmfO4eRqUBm6x",
-        port=5432
-    )
+SUPABASE_URL = "https://fcbodvbschphjkgyeiqb.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjYm9kdmJzY2hwaGprZ3llaXFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI5NzM4NzcsImV4cCI6MjA2ODU0OTg3N30.aXPNvYXLLAtifZvdwyirE-I5hCMbUTfg6sXP84Ex7C4"
+
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+
